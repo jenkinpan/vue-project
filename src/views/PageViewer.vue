@@ -24,7 +24,7 @@ export default {
     };
   },
   watch: {
-    index(newIndex) {
+    index(newIndex, oldIndex) {
       this.page = this.$pages.getSinglePage(newIndex);
     },
   },

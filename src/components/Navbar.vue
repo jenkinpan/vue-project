@@ -38,7 +38,9 @@ export default {
   components: {
     NavbarLink,
   },
+
   inject: ["$pages", "$bus"],
+
   created() {
     this.getThemeSetting();
 
@@ -46,19 +48,23 @@ export default {
 
     this.$bus.$on("page-updated", () => {
       this.pages = [...this.$pages.getAllPages()];
+      // set a new array for the pages
     });
   },
+
   computed: {
     publishedPages() {
       return this.pages.filter((p) => p.published);
     },
   },
+
   data() {
     return {
       theme: "light",
       pages: [],
     };
   },
+
   methods: {
     changeTheme() {
       let theme = "light";
