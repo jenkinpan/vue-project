@@ -8,7 +8,7 @@ export default {
     events.get(eventName).push(fn);
   },
 
-  $off(eventName, fn) {
+  $off() {
     throw { messge: "Not Implemented!" };
   },
 
